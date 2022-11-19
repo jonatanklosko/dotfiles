@@ -1,0 +1,57 @@
+{
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.startupEditor": "none",
+  "editor.tabSize": 2,
+  "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 13,
+  "editor.minimap.enabled": false,
+  "editor.guides.indentation": false,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorSurroundingLines": 10,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.livemd": "markdown"
+  },
+  "explorer.confirmDelete": false,
+  "search.exclude": {
+    "**/.workspace": true,
+    "**/package-lock.json": true
+  },
+  "window.openFoldersInNewWindow": "on",
+  "terminal.external.osxExec": "iTerm.app",
+  "security.workspace.trust.untrustedFiles": "open",
+  "cSpell.spellCheckDelayMs": 150,
+  "cSpell.language": "en,pl",
+  "elixirLS.suggestSpecs": false,
+  "elixirLS.fetchDeps": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "jupyter.askForKernelRestart": false,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

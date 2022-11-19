@@ -1,0 +1,32 @@
+[
+  {
+    "key": "cmd+d",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+shift+b",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "cmd+l l",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'markdown'",
+    "args": {
+      "snippet": "[#$TM_SELECTED_TEXT](https://github.com/livebook-dev/livebook/pull/$TM_SELECTED_TEXT)$0"
+    }
+  },
+  {
+    "key": "cmd+l k",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'markdown'",
+    "args": {
+      "snippet": "[#$TM_SELECTED_TEXT](https://github.com/livebook-dev/kino/pull/$TM_SELECTED_TEXT)$0"
+    }
+  }
+]

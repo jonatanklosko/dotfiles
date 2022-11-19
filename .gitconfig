@@ -1,0 +1,15 @@
+[user]
+  name = Jonatan Kłosko
+  email = jonatanklosko@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore
+
+[pull]
+  ff = only
+
+[init]
+  defaultBranch = main
+
+[credential]
+  helper = store

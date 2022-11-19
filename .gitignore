@@ -1,0 +1,11 @@
+# VSCode files
+.vscode/
+
+# Jupyter data
+.ipynb_checkpoints
+
+# Symlinks to a workspace directory
+.workspace
+
+# The configuration git bare repository
+/.dotfiles/

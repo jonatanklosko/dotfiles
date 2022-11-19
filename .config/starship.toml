@@ -1,0 +1,29 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration"""
+
+add_newline = false
+
+[directory]
+truncation_length = 1
+
+[git_branch]
+symbol = ""
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold white"
+
+[git_status]
+style = "bold yellow"
+format = '([$all_status$ahead_behind]($style) )'
+untracked = "*"
+stashed = ""
+modified = "*"
+staged = "*"
+renamed = "*"
+deleted = "*"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold white"
