@@ -50,3 +50,6 @@ export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 eval "$(starship init zsh)"
+
+# Set the torch installation directory for torchx
+export LIBTORCH_DIR="/opt/homebrew/Cellar/pytorch/1.13.0"
