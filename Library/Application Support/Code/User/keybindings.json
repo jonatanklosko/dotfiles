@@ -28,5 +28,13 @@
     "args": {
       "snippet": "[#$TM_SELECTED_TEXT](https://github.com/livebook-dev/kino/pull/$TM_SELECTED_TEXT)$0"
     }
+  },
+  {
+    "key": "cmd+l b",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'markdown'",
+    "args": {
+      "snippet": "[#$TM_SELECTED_TEXT](https://github.com/elixir-nx/bumblebee/pull/$TM_SELECTED_TEXT)$0"
+    }
   }
 ]
