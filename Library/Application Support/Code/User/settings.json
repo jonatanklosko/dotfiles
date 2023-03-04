@@ -13,7 +13,8 @@
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.livemd": "markdown"
+    "*.livemd": "markdown",
+    "*.heex": "phoenix-heex"
   },
   "explorer.confirmDelete": false,
   "search.exclude": {
