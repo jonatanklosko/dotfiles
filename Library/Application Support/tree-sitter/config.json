@@ -1,0 +1,37 @@
+{
+  "parser-directories": [
+    "/Users/jonatanklosko/git"
+  ],
+  "theme": {
+    "number": {
+      "color": "#61afef",
+      "bold": true
+    },
+    "string": "#98c379",
+    "string.escape": "#56b6c2",
+    "string.special": "#61afef",
+    "string.regexp": "#e06c75",
+    "type": "#e06c75",
+    "module": "#e06c75",
+    "comment": {
+      "color": "#5c6370",
+      "italic": true
+    },
+    "punctuation": "#abb2bf",
+    "punctuation.special": "#be5046",
+    "operator": {
+      "color": "#d19a66",
+      "bold": true
+    },
+    "variable": "#abb2bf",
+    "function": "#61afef",
+    "constant": "#61afef",
+    "constant.builtin": {
+      "color": "#e06c75",
+      "bold": true
+    },
+    "keyword": "#c678dd",
+    "attribute": "#e06c75",
+    "embedded": null
+  }
+}
