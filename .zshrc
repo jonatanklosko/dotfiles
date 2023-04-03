@@ -46,9 +46,6 @@ export PATH="$HOME/bin:$PATH"
 
 . "$(brew --prefix asdf)/libexec/asdf.sh"
 
-export FLYCTL_INSTALL="$HOME/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
 eval "$(starship init zsh)"
 
 # Set the torch installation directory for torchx
