@@ -36,7 +36,7 @@ alias md="mix docs -f html"
 alias mr="mix run"
 alias mc="mix compile"
 
-alias lb="LIVEBOOK_DATA_PATH=$HOME/stuff/notebooks/.livebook LIVEBOOK_HOME=$HOME/stuff/notebooks livebook server $HOME/stuff/notebooks"
+alias lb="LIVEBOOK_DATA_PATH=$HOME/stuff/notebooks/.livebook LIVEBOOK_HOME=$HOME/stuff/notebooks livebook server @home"
 
 # Environment setup
 
