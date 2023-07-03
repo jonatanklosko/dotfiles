@@ -12,3 +12,6 @@
 
 # The configuration git bare repository
 /.dotfiles/
+
+# Project overrides for asdf
+.tool-versions

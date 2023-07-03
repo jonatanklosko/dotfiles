@@ -18,6 +18,7 @@
     "*.heex": "phoenix-heex"
   },
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "search.exclude": {
     "**/.workspace": true,
     "**/package-lock.json": true
@@ -33,8 +34,10 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "jupyter.askForKernelRestart": false,
+  "openInGitHub.defaultBranch": "main",
   "[elixir]": {
-    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.bracketPairColorization.enabled": false
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -55,6 +58,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
