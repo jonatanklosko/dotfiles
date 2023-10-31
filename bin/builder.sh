@@ -5,10 +5,11 @@ print_usage_and_exit() {
   echo ""
   echo "Available commands:"
   echo ""
-  echo "  builder create <name> <arch> <vcpu>    Creates a new amd/arm builder instance with 4, 8, 16 or 32 vCPUs"
-  echo "  builder connect <name>                 Establishes an SSH connection to the builder instance"
-  echo "  builder terminate <name>               Terminates the builder instance"
-  echo "  builder list                           Lists all running builder instances"
+  echo "  builder create <name> <arch> <vcpu>       Creates a new amd/arm builder instance with 4, 8, 16 or 32 vCPUs"
+  echo "  builder connect <name>                    Establishes an SSH connection to the builder instance"
+  echo "  builder fetch <name> <source> <target>    Copies file from the builder to the local machine"
+  echo "  builder terminate <name>                  Terminates the builder instance"
+  echo "  builder list                              Lists all running builder instances"
   echo ""
   exit 1
 }
@@ -21,6 +22,15 @@ export AWS_REGION="us-east-2"
 
 instance_name_prefix="builder-"
 ssh_key_path="$HOME/.ssh/jonatanklosko-aws-default.pem"
+ssh_options="-i $ssh_key_path -o StrictHostKeychecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=error"
+
+describe_instance() {
+  name="$1"
+
+  aws ec2 describe-instances \
+    --filters "Name=tag:Name,Values=$instance_name_prefix$name" "Name=instance-state-name,Values=running" \
+    --query "Reservations[0].Instances[0]"
+}
 
 case "$1" in
   "create")
@@ -29,6 +39,11 @@ case "$1" in
     fi
 
     name="$2"; arch="$3"; vcpu="$4"
+
+    if [ "$(describe_instance $name)" != "null" ]; then
+      echo "Instance with name '$name' already exists"
+      exit 1
+    fi
 
     case "$arch" in
         "amd") instance_group="c7a"; image_id="ami-0430580de6244e02e" ;;
@@ -69,18 +84,33 @@ case "$1" in
 
     name="$2"
 
-    public_ip="$(
-      aws ec2 describe-instances \
-        --filters "Name=tag:Name,Values=$instance_name_prefix$name" "Name=instance-state-name,Values=running" \
-        --query "Reservations[*].Instances[*].PublicIpAddress" \
-        --output text
-    )"
+    public_ip="$(describe_instance $name | jq '.PublicIpAddress')"
 
-    if [ -z "$public_ip" ]; then
+    if [ "$public_ip" = "null" ]; then
       echo "Instance with name '$name' not found"
-    else
-      ssh -i $ssh_key_path -o StrictHostKeychecking=no ubuntu@$public_ip
+      exit 1
     fi
+
+    ssh $ssh_options ubuntu@$public_ip
+  ;;
+
+  "fetch")
+    if [ $# -ne 4 ]; then
+      print_usage_and_exit
+    fi
+
+    name="$2"
+    source="$3"
+    target="$4"
+
+    public_ip="$(describe_instance $name | jq '.PublicIpAddress')"
+
+    if [ "$public_ip" = "null" ]; then
+      echo "Instance with name '$name' not found"
+      exit 1
+    fi
+
+    scp $ssh_options ubuntu@$public_ip:$source $target
   ;;
 
   "terminate")
@@ -90,18 +120,13 @@ case "$1" in
 
     name="$2"
 
-    instance_id="$(
-      aws ec2 describe-instances \
-        --filters "Name=tag:Name,Values=$instance_name_prefix$name" "Name=instance-state-name,Values=running" \
-        --query "Reservations[*].Instances[*].InstanceId" \
-        --output text
-    )"
+    instance_id="$(describe_instance $name | jq '.InstanceId')"
 
-    if [ -z "$instance_id" ]; then
+    if [ "$instance_id" = "null" ]; then
       echo "Instance with name '$name' not found"
-    else
-      aws ec2 terminate-instances --instance-ids $instance_id
     fi
+
+    aws ec2 terminate-instances --instance-ids $instance_id
   ;;
 
   "list")
