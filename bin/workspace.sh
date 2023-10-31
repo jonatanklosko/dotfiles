@@ -1,7 +1,7 @@
 #!/bin/bash
 
 print_usage_and_exit() {
-  echo "Usage: $0 [command]"
+  echo "Usage: $0 <command>"
   echo ""
   echo "Available commands:"
   echo ""
