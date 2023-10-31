@@ -84,7 +84,7 @@ case "$1" in
 
     name="$2"
 
-    public_ip="$(describe_instance $name | jq '.PublicIpAddress')"
+    public_ip="$(describe_instance $name | jq --raw-output '.PublicIpAddress')"
 
     if [ "$public_ip" = "null" ]; then
       echo "Instance with name '$name' not found"
@@ -103,7 +103,7 @@ case "$1" in
     source="$3"
     target="$4"
 
-    public_ip="$(describe_instance $name | jq '.PublicIpAddress')"
+    public_ip="$(describe_instance $name | jq --raw-output '.PublicIpAddress')"
 
     if [ "$public_ip" = "null" ]; then
       echo "Instance with name '$name' not found"
@@ -120,7 +120,7 @@ case "$1" in
 
     name="$2"
 
-    instance_id="$(describe_instance $name | jq '.InstanceId')"
+    instance_id="$(describe_instance $name | jq --raw-output '.InstanceId')"
 
     if [ "$instance_id" = "null" ]; then
       echo "Instance with name '$name' not found"
@@ -133,7 +133,7 @@ case "$1" in
     instances="$(
       aws ec2 describe-instances \
         --filters "Name=tag:Name,Values=$instance_name_prefix*" "Name=instance-state-name,Values=running" \
-        --output json
+        | jq '[.Reservations[].Instances[]]'
     )"
 
     num_instances="$(echo $instances | jq 'length')"
@@ -142,7 +142,7 @@ case "$1" in
       echo "No builder instance found"
     else
       echo "$num_instances builder instance running:"
-      echo $instances | jq '.Reservations[].Instances[] | {id: .InstanceId, ip: .PublicIpAddress, tags: (.Tags | from_entries)}'
+      echo $instances | jq '.[] | {id: .InstanceId, ip: .PublicIpAddress, tags: (.Tags | from_entries)}'
     fi
   ;;
 
