@@ -16,11 +16,12 @@ source "$ZSH/oh-my-zsh.sh"
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 alias o="open"
+alias e="zed"
 alias d="docker"
 alias dc="docker-compose"
-alias l="exa --long --group-directories-first"
-alias la="exa --long --group-directories-first --all"
-alias ls="exa --group-directories-first"
+alias l="eza --long --group-directories-first"
+alias la="eza --long --group-directories-first --all"
+alias ls="eza --group-directories-first"
 alias cat="bat"
 
 alias gs="echo '🙈'"
