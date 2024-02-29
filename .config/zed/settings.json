@@ -1,0 +1,25 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "One Dark",
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_features": {
+    "calt": false
+  },
+  "tab_size": 2,
+  "soft_wrap": "none",
+  "format_on_save": "off",
+  "show_completion_documentation": false,
+  "show_completions_on_input": false,
+  "elixir": {
+    "lsp": "elixir_ls"
+  }
+}
