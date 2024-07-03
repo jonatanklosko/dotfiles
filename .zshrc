@@ -23,6 +23,7 @@ alias l="eza --long --group-directories-first"
 alias la="eza --long --group-directories-first --all"
 alias ls="eza --group-directories-first"
 alias cat="bat"
+alias lsports="lsof -iTCP -sTCP:LISTEN -n -P"
 
 alias gs="echo '🙈'"
 alias gdm="git diff main"

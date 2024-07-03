@@ -19,6 +19,14 @@
   "format_on_save": "off",
   "show_completion_documentation": false,
   "show_completions_on_input": false,
+  "indent_guides": {
+    "enabled": false
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
   "elixir": {
     "lsp": "elixir_ls"
   }
