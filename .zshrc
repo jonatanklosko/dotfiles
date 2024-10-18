@@ -52,8 +52,5 @@ eval "$(starship init zsh)"
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
-# Set the torch installation directory for torchx
-export LIBTORCH_DIR="/opt/homebrew/Cellar/pytorch/1.13.0"
-
 # Persist IEx history across sessions
 export ERL_AFLAGS="-kernel shell_history enabled"

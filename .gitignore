@@ -4,6 +4,9 @@
 # VSCode files
 .vscode/
 
+# Zed files
+.zed/
+
 # Jupyter data
 .ipynb_checkpoints
 
