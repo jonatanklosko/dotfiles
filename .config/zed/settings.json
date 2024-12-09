@@ -18,7 +18,7 @@
   "soft_wrap": "none",
   "format_on_save": "off",
   "show_completion_documentation": false,
-  "show_completions_on_input": false,
+  "show_completions_on_input": true,
   "indent_guides": {
     "enabled": false
   },

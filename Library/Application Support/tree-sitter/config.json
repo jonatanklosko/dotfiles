@@ -25,6 +25,7 @@
     },
     "variable": "#abb2bf",
     "function": "#61afef",
+    "property": "#61afef",
     "constant": "#61afef",
     "constant.builtin": {
       "color": "#e06c75",
