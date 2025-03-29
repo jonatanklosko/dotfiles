@@ -26,6 +26,7 @@ brew "wget"
 
 cask "amethyst"
 cask "brave-browser"
+cask "discord"
 cask "docker"
 cask "firefox"
 cask "font-computer-modern"

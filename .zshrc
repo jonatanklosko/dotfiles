@@ -16,7 +16,7 @@ source "$ZSH/oh-my-zsh.sh"
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 alias o="open"
-alias e="zed"
+alias e="zed-preview"
 alias d="docker"
 alias dc="docker-compose"
 alias l="eza --long --group-directories-first"
@@ -46,7 +46,8 @@ export LANG=en_US.UTF-8
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-. "$(brew --prefix asdf)/libexec/asdf.sh"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 eval "$(starship init zsh)"
 
