@@ -7,9 +7,6 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "theme": "One Dark",
   "ui_font_size": 14,
   "buffer_font_size": 14,
@@ -28,6 +25,28 @@
   "git": {
     "inline_blame": {
       "enabled": false
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking"
+    },
+    "version": "2"
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative"
+          }
+        }
+      }
     }
   }
 }
