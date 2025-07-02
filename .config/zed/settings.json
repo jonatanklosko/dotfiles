@@ -27,6 +27,7 @@
       "enabled": false
     }
   },
+  "show_edit_predictions": true,
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -37,6 +38,11 @@
       "model": "claude-sonnet-4-thinking"
     },
     "version": "2"
+  },
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    }
   },
   "lsp": {
     "vtsls": {
