@@ -55,3 +55,5 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Persist IEx history across sessions
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+export MIX_OS_DEPS_COMPILE_PARTITION_COUNT=4

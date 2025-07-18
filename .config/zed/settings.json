@@ -32,6 +32,7 @@
     "edit_prediction_provider": "zed"
   },
   "agent": {
+    "single_file_review": false,
     "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
