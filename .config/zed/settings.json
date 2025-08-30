@@ -36,10 +36,13 @@
     "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking"
+      "model": "claude-sonnet-4"
     }
   },
   "languages": {
+    "Elixir": {
+      "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"]
+    },
     "Markdown": {
       "show_edit_predictions": false
     }
