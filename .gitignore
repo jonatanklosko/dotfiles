@@ -21,3 +21,6 @@
 
 # Configuration with global C++ include paths
 .clangd
+
+# Expert LSP directory, sometimes it is missing gitignore
+.expert/

@@ -16,7 +16,7 @@ source "$ZSH/oh-my-zsh.sh"
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 alias o="open"
-alias e="zed-preview"
+# alias e="zed-preview -n"
 alias d="docker"
 alias dc="docker-compose"
 alias l="eza --long --group-directories-first"
@@ -39,6 +39,23 @@ alias mr="mix run"
 alias mc="mix compile"
 
 alias lb="LIVEBOOK_DATA_PATH=$HOME/stuff/notebooks/.livebook LIVEBOOK_HOME=$HOME/stuff/notebooks livebook server @home"
+
+# Functions
+
+function e() {
+  # When opening new window with Zed, it first focuses an existing window,
+  # which makes AeroSpace switch to that workspace. To work around this,
+  # instead of an alias, we use a function that moves the new window back
+  # to the original workspace.
+
+  current_workspace=$(aerospace list-workspaces --focused)
+  zed-preview -n $1
+  new_workspace=$(aerospace list-workspaces --focused)
+  if [[ "$new_workspace" != "$current_workspace" ]]; then
+    aerospace move-node-to-workspace "$current_workspace"
+    aerospace workspace "$current_workspace"
+  fi
+}
 
 # Environment setup
 

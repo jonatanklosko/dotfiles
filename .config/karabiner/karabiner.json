@@ -49,31 +49,25 @@
             "description": "Remappings",
             "manipulators": [
               {
+                "type": "basic",
                 "from": {
-                  "key_code": "k",
-                  "modifiers": { "mandatory": ["left_control", "left_option"] }
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
                 },
                 "to": [
                   {
-                    "key_code": "right_arrow",
-                    "modifiers": ["left_control", "left_option"]
+                    "key_code": "left_option",
+                    "modifiers": ["left_control", "left_command"]
                   }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "j",
-                  "modifiers": { "mandatory": ["left_control", "left_option"] }
-                },
-                "to": [
-                  {
-                    "key_code": "left_arrow",
-                    "modifiers": ["left_control", "left_option"]
-                  }
-                ],
-                "type": "basic"
-              },
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Extra terminal shortcuts",
+            "manipulators": [
               {
                 "conditions": [
                   {
