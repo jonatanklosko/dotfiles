@@ -16,11 +16,15 @@
 # The configuration git bare repository
 /.dotfiles/
 
-# Project overrides for asdf
+# Project overrides for mise
 .tool-versions
+mise.toml
 
 # Configuration with global C++ include paths
 .clangd
 
 # Expert LSP directory, sometimes it is missing gitignore
 .expert/
+
+# Claude Code configuration
+.claude/

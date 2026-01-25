@@ -36,12 +36,15 @@
     "single_file_review": false,
     "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest"
     }
   },
   "languages": {
     "Elixir": {
+      "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"]
+    },
+    "HEEX": {
       "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"]
     },
     "Markdown": {

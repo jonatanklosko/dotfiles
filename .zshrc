@@ -63,8 +63,7 @@ export LANG=en_US.UTF-8
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+eval "$(mise activate zsh)"
 
 eval "$(starship init zsh)"
 
