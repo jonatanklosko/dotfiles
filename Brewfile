@@ -28,6 +28,7 @@ brew "wget"
 
 cask "aerospace"
 cask "brave-browser"
+cask "claude-code@latest"
 cask "discord"
 cask "docker"
 cask "firefox"

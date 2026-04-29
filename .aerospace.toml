@@ -259,6 +259,10 @@ on-mode-changed = []
     run = 'move-node-to-workspace P'
 
 [[on-window-detected]]
+    if.app-id = 'com.apple.Music'
+    run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
     run = 'move-node-to-workspace M'
 

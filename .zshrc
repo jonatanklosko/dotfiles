@@ -29,6 +29,7 @@ alias gs="echo '🙈'"
 alias gdm="git diff main"
 alias gdms="git diff main --stat"
 alias gd1="git diff HEAD~1"
+alias gtmp="git add --all && git commit -m 'checkpoint'"
 
 alias mf="mix format"
 alias mfa="mix format.all"

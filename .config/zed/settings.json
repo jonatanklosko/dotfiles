@@ -7,6 +7,28 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right",
+    "tree_view": false
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "theme": "One Dark",
   "ui_font_size": 14,
   "buffer_font_size": 14,
@@ -28,11 +50,11 @@
     }
   },
   "show_edit_predictions": true,
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "agent": {
-    "always_allow_tool_actions": true,
+    "dock": "left",
+    "tool_permissions": {
+      "default": "allow"
+    },
     "single_file_review": false,
     "default_profile": "write",
     "default_model": {
@@ -44,7 +66,7 @@
     "Elixir": {
       "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"]
     },
-    "HEEX": {
+    "HEEx": {
       "language_servers": ["expert", "!elixir-ls", "!next-ls", "!lexical"]
     },
     "Markdown": {
