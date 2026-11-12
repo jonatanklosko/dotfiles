@@ -73,7 +73,11 @@
                   {
                     "bundle_identifiers": [
                       "^com\\.apple\\.Terminal$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^com\\.utmapp\\.UTM$"
+                    ],
+                    "file_paths": [
+                      "^/Applications/Try Omarchy\\.app/Contents/Resources/runtime/bin/Try Omarchy$"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -95,7 +99,11 @@
                   {
                     "bundle_identifiers": [
                       "^com\\.apple\\.Terminal$",
-                      "^com\\.googlecode\\.iterm2$"
+                      "^com\\.googlecode\\.iterm2$",
+                      "^com\\.utmapp\\.UTM$"
+                    ],
+                    "file_paths": [
+                      "^/Applications/Try Omarchy\\.app/Contents/Resources/runtime/bin/Try Omarchy$"
                     ],
                     "type": "frontmost_application_unless"
                   }

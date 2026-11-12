@@ -274,3 +274,7 @@ on-mode-changed = []
     if.app-id = 'com.brave.Browser'
     if.window-title-regex-substring = 'jonatanklosko@gmail.com - Gmail'
     run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+    if.app-id = 'dev.tryomarchy.native'
+    run = 'move-node-to-workspace O'
